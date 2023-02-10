@@ -12,4 +12,4 @@ app.listen(PORT, () => {
     return console.log(`Express listening at http://localhost:${PORT}`)
 })
 
-module.exports = app
+export default app
