@@ -2,10 +2,19 @@
   "name": "notes",
   "version": "1.0.0",
   "description": "notes app backend",
-  "main": "index.js",
+  "main": "build/notes/index.js",
   "scripts": {
+    "start": "tsc && node build/notes.index.js",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "luke hays",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "typescript": "^4.9.5"
+  }
 }
