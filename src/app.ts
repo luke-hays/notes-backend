@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import * as db from './db/index'
 
 const PORT = 3001
 
@@ -12,6 +13,13 @@ app.get('/', (req, res) => {
 
 app.get('/notes', (req, res, next) => {
   console.log('get', req)
+  db.query('SELECT * FROM notes', [], (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(result)
+    }
+  })
   res.send({ test: 'It Works' })
 })
 
