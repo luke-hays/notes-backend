@@ -14,7 +14,7 @@ const query = async (text : string, params: any, cb: callback) => {
   try {
     return await pool.query(text, params, cb)
   } catch(error) {
-    console.log(error)
+    // console.log(error)
   }
 }
 
