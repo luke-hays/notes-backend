@@ -24,17 +24,32 @@ router.post('/', async (req: Request, res: Response) => {
     }
   })
 
-  res.send('Implementation Pending')
+  res.send('Success')
 })
 
 router.put('/', async (req: Request, res: Response) => {
-  console.log(req.body)
-  res.send('Implementation Pending')
+  const {id, content, summary} = req.body
+  const parameterizedQuery = 'UPDATE notes SET CONTENT = $2, SUMMARY = $3 WHERE ID = $1'
+
+  await query(parameterizedQuery, [id, content, summary], (err, result) => {
+    if (err) {
+      console.log(err)
+    }
+  })
+
+  res.send('Success')
 })
 
 router.delete('/', async (req: Request, res: Response) => {
-  console.log(req.body)
-  res.send('Implementation Pending')
+  const {id} = req.body
+  const parameterizedQuery = 'DELETE FROM notes WHERE ID = $1'
+
+  await query(parameterizedQuery, [id], (err, result) => {
+    if (err) {
+      console.log(err)
+    }
+  })
+  res.send('Success')
 })
 
 export default router;

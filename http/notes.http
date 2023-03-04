@@ -17,8 +17,9 @@ PUT http://localhost:3001/notes HTTP/1.1
 content-type: application/json
 
 {
-  "id": "1",
-  "content": "updated content"
+  "id": "2",
+  "content": "updated content",
+  "summary": "updated summary"
 }
 
 ###
