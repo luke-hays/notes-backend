@@ -10,7 +10,7 @@ const pool = new Pool({
   host: process.env.PGHOST
 })
 
-const query = async (text : string, params: any, cb: callback) => {
+const query = async (text: string, params: any, cb: callback) => {
   try {
     return await pool.query(text, params, cb)
   } catch(error) {

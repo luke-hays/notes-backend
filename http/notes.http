@@ -1,0 +1,31 @@
+GET http://localhost:3001/notes HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:3001/notes HTTP/1.1
+content-type: application/json
+
+{
+  "content": "this is a test",
+  "summary": ""
+}
+
+###
+
+PUT http://localhost:3001/notes HTTP/1.1
+content-type: application/json
+
+{
+  "id": "1",
+  "content": "updated content"
+}
+
+###
+
+DELETE  http://localhost:3001/notes HTTP/1.1
+content-type: application/json
+
+{
+  "id": "1"
+}
